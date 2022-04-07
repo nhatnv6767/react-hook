@@ -11,6 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name} in {obj.name}</h1>
+        <p>{JSON.stringify(obj)}</p>
         <a href={link} target="_blank">Visit my channel</a>
       </header>
     </div>

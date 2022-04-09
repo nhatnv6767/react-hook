@@ -4,17 +4,17 @@ import Nav from './views/Nav'
 
 function App() {
   let name = "None"
-  let number = 2022
-  let obj = { name: 'None', channel: 'Bu lang kkk' }
-  let link = 'https://github.com/nhatnv6767/react-hook'
+
+  const handleEventClick = () => {
+    console.log('Click me')
+  }
   return (
     <div className="App">
       <Nav />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello World with React Hook - {name} in {obj.name}</h1>
-        <p>{JSON.stringify(obj)}</p>
-        <a href={link} target="_blank">Visit my channel</a>
+        <h1>Hello World with React Hook - {name}</h1>
+        <button type="button" onClick={handleEventClick}>Click me</button>
       </header>
     </div>
   );

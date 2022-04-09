@@ -4,10 +4,14 @@ import Nav from './views/Nav'
 import { useState } from 'react'
 
 function App() {
-  const [name] = useState('None');
+  // state sẽ trả ra 1 array, array này có 2 phần tử 
+  // phần tử đầu tiên là biến, phần tử thứ 2 là 1 function xử lý khi biến có sự thay đổi
+  // ngoặc [] - array destrucring: giản lược
+  let [name, setName] = useState('None');
 
   const handleEventClick = (event) => {
-    console.log('Click me', event)
+    name = 'Another name'
+    console.log('Click me', name)
   }
   return (
     <div className="App">

@@ -10,7 +10,8 @@ function App() {
   let [name, setName] = useState('None');
 
   const handleEventClick = (event) => {
-    name = 'Another name'
+    // setName là hàm bất đồng bộ
+    setName('Another name')
     console.log('Click me', name)
   }
   return (

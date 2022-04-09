@@ -14,7 +14,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
-        <button type="button" onClick={handleEventClick}>Click me</button>
+        <button type="button" onClick={() => handleEventClick()}>Click me</button>
       </header>
     </div>
   );

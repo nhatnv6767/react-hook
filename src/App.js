@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav from './views/Nav'
+import { useState } from 'react'
 
 function App() {
-  let name = "None"
+  const [name] = useState('None');
 
   const handleEventClick = (event) => {
     console.log('Click me', event)

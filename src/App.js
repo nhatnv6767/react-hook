@@ -17,6 +17,7 @@ function App() {
   }
 
   const handleOnChangeInput = (event) => {
+    setAddress(event.target.value)
     console.log(event.target.value)
   }
   return (

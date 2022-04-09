@@ -12,13 +12,11 @@ function App() {
 
   const handleEventClick = (event) => {
     // setName là hàm bất đồng bộ
-    setName('Another name')
-    console.log('Click me', name)
+    setName(address)
   }
 
   const handleOnChangeInput = (event) => {
     setAddress(event.target.value)
-    console.log(event.target.value)
   }
   return (
     <div className="App">

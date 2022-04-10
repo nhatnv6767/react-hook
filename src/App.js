@@ -17,8 +17,9 @@ function App() {
 
   const handleEventClick = (event) => {
     // hook not merge state
-    let todo = { id: Math.floor(Math.random() * 30000), title: address }
-    setTodos([todo])
+    let newTodo = { id: Math.floor(Math.random() * 30000), title: address }
+    setTodos([...todos, newTodo])
+    setAddress('')
   }
 
   const handleOnChangeInput = (event) => {

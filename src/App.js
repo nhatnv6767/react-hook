@@ -9,6 +9,10 @@ function App() {
   // ngoặc [] - array destrucring: giản lược
   let [name, setName] = useState('None');
   const [address, setAddress] = useState('')
+  const [todos, setTodos] = useState([
+    { id: 'todo1', title: 'Watching TV' },
+    { id: 'todo2', title: 'Fixing bugs' }
+  ])
 
   const handleEventClick = (event) => {
     // setName là hàm bất đồng bộ
@@ -24,6 +28,17 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
+        <div className='todos-container'>
+          <div className='todo-child'>
+            Doing homework 1
+          </div>
+          <div className='todo-child'>
+            Doing homework 1
+          </div>
+          <div className='todo-child'>
+            Doing homework 1
+          </div>
+        </div>
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
       </header>

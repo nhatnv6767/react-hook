@@ -25,7 +25,8 @@ function App() {
     // việc thêm [] <dependencies> nghĩa là hàm useEffect này chỉ chạy duy nhất 
     // 1 lần <=> ComponentDidmount
     // chạy 1 lần duy nhất sau khi render lần đầu
-  }, []);
+  }, [address]);
+  // khi address thay doi thi ham nay moi chay tiep
 
 
   const handleEventClick = (event) => {

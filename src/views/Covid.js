@@ -17,6 +17,7 @@ const Covid = () => {
             {console.log(">>>> Check data covid: ", dataCovid)}
             <thead>
                 <tr>
+                    <th>Date</th>
                     <th>Confirmed</th>
                     <th>Active</th>
                     <th>Deaths</th>

@@ -33,13 +33,18 @@ function App() {
   }
   return (
     <div className="App">
-      <Nav />
       <header className="App-header">
+        <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
         <Todo
           todos={todos}
-          title={'Do somethings'}
+          title={'All todos'}
+        />
+
+        <Todo
+          todos={todos.filter(item => item.type === 'Nut')}
+          title={`Nut's todos`}
         />
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>

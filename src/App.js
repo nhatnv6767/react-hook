@@ -32,7 +32,7 @@ function App() {
         <div className='todos-container'>
           {todos.map(todo => {
             return (
-              <li className='todo-child'>
+              <li className='todo-child' key={todo.id}>
                 {todo.title}
               </li>
             )

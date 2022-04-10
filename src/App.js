@@ -21,6 +21,7 @@ function App() {
   // will run after first render
   // will run when re-render
   useEffect(() => {
+    setAddress('nononooooo')
     console.log('>>>> Run use effect')
   });
 

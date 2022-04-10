@@ -14,17 +14,21 @@ const Covid = () => {
     }, []);
     return (
         <table>
+            {console.log(">>>> Check data covid: ", dataCovid)}
             <thead>
                 <tr>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
+                    <th>Confirmed</th>
+                    <th>Active</th>
+                    <th>Deaths</th>
+                    <th>Recovered</th>
                 </tr>
             </thead>
             <tbody>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
             </tbody>
 
         </table>

@@ -16,8 +16,9 @@ function App() {
   ])
 
   const handleEventClick = (event) => {
-    // setName là hàm bất đồng bộ
-    setName(address)
+    // hook not merge state
+    let todo = { id: Math.floor(Math.random() * 30000), title: address }
+    setTodos([todo])
   }
 
   const handleOnChangeInput = (event) => {

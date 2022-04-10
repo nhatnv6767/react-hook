@@ -29,15 +29,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
         <div className='todos-container'>
-          <li className='todo-child'>
-            Doing homework 1
-          </li>
-          <li className='todo-child'>
-            Doing homework 1
-          </li>
-          <li className='todo-child'>
-            Doing homework 1
-          </li>
+          {todos.map(todo => {
+            return (
+              <li className='todo-child'>
+                Doing homework 1
+              </li>
+            )
+          })}
         </div>
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
@@ -45,6 +43,8 @@ function App() {
     </div>
   );
 }
+// không dùng vòng for,
+// vì for lặp theo từng index, chứ không lặp theo từng object ở trong nó
 
 // <a href={link} target="_blank">Visit my channel</a> 
 // Sang 1 trang mới

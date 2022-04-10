@@ -24,11 +24,17 @@ const Covid = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                </tr>
+                {dataCovid && dataCovid.length > 0 && dataCovid.map(item => {
+                    return (
+                        <tr key={item.ID}>
+                            <td>{item.Confirmed}</td>
+                            <td>{item.Active}</td>
+                            <td>{item.Deaths}</td>
+                            <td>{item.Recovered}</td>
+                        </tr>
+                    )
+                })}
+
             </tbody>
 
         </table>

@@ -11,9 +11,10 @@ function App() {
   let [name, setName] = useState('None');
   const [address, setAddress] = useState('')
   const [todos, setTodos] = useState([
-    { id: 'todo1', title: 'Watching TV' },
-    { id: 'todo2', title: 'Fixing bugs' },
-    { id: 'todo3', title: 'Cho con bú' }
+    { id: 'todo1', title: 'Watching TV', type: 'Nut' },
+    { id: 'todo2', title: 'Fixing bugs', type: 'Nut' },
+    { id: 'todo3', title: 'Cho con bú', type: 'No Nut November' },
+    { id: 'todo4', title: 'Xỉa răng', type: 'No Nut November' }
   ])
 
   const handleEventClick = (event) => {
@@ -22,7 +23,7 @@ function App() {
       return
     }
     // hook not merge state
-    let newTodo = { id: Math.floor(Math.random() * 30000), title: address }
+    let newTodo = { id: Math.floor(Math.random() * 30000), title: address, type: 'Nut' }
     setTodos([...todos, newTodo])
     setAddress('')
   }

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav from './views/Nav'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Todo from './views/Todo'
 
 function App() {
@@ -16,6 +16,11 @@ function App() {
     { id: 'todo3', title: 'Cho con bú', type: 'No Nut November' },
     { id: 'todo4', title: 'Xỉa răng', type: 'No Nut November' }
   ])
+
+  // is a function
+  useEffect(() => {
+    console.log('>>>> Run use effect')
+  });
 
   const handleEventClick = (event) => {
     if (!address) {

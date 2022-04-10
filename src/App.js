@@ -21,12 +21,17 @@ function App() {
   // will run after first render
   // will run when re-render
   useEffect(() => {
-    console.log('>>>> Run use effect')
+    console.log('>>>> Run use effect address')
     // việc thêm [] <dependencies> nghĩa là hàm useEffect này chỉ chạy duy nhất 
     // 1 lần <=> ComponentDidmount
     // chạy 1 lần duy nhất sau khi render lần đầu
   }, [address]);
   // khi address thay doi thi ham nay moi chay tiep
+
+
+  useEffect(() => {
+    console.log('>>>> Run use effect todos')
+  }, [todos]);
 
 
   const handleEventClick = (event) => {

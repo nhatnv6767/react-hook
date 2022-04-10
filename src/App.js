@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './views/Nav'
 import { useState } from 'react'
+import Todo from './views/Todo'
 
 function App() {
   // state sẽ trả ra 1 array, array này có 2 phần tử 
@@ -35,7 +36,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
-
+        <Todo
+          todos={todos}
+        />
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
       </header>

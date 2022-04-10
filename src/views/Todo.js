@@ -1,4 +1,5 @@
-const Todo = () => {
+const Todo = (props) => {
+    const todos = props.todos
     return (
         <div className='todos-container'>
             {todos.map(todo => {

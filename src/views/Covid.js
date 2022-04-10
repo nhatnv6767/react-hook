@@ -3,10 +3,14 @@ import axios from "axios";
 
 const Covid = () => {
 
+    const [dataCovid, setDataCovid] = useState([]);
+
     // componentDidMount
     useEffect(async () => {
         let res = await axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
-        console.log("RES: ", res.data);
+        // if have response, and have res.data => res.data else []
+        let data = res && res.data ? res.data : []
+        setDataCovid(data)
     }, []);
     return (
         <table>

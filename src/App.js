@@ -11,7 +11,8 @@ function App() {
   const [address, setAddress] = useState('')
   const [todos, setTodos] = useState([
     { id: 'todo1', title: 'Watching TV' },
-    { id: 'todo2', title: 'Fixing bugs' }
+    { id: 'todo2', title: 'Fixing bugs' },
+    { id: 'todo3', title: 'Cho con bú' }
   ])
 
   const handleEventClick = (event) => {
@@ -32,7 +33,7 @@ function App() {
           {todos.map(todo => {
             return (
               <li className='todo-child'>
-                Doing homework 1
+                {todo.title}
               </li>
             )
           })}

@@ -4,8 +4,9 @@ import axios from "axios";
 const Covid = () => {
 
     // componentDidMount
-    useEffect(() => {
-        axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
+    useEffect(async () => {
+        let res = await axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
+        console.log("RES: ", res.data);
     }, []);
     return (
         <table>

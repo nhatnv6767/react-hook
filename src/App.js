@@ -18,6 +18,8 @@ function App() {
   ])
 
   // is a function
+  // will run after first render
+  // will run when re-render
   useEffect(() => {
     console.log('>>>> Run use effect')
   });

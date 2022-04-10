@@ -25,33 +25,35 @@ const Covid = () => {
         setDataCovid(data)
     }, []);
     return (
-        <table>
-            {console.log(">>>> Check data covid: ", dataCovid)}
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Confirmed</th>
-                    <th>Active</th>
-                    <th>Deaths</th>
-                    <th>Recovered</th>
-                </tr>
-            </thead>
-            <tbody>
-                {dataCovid && dataCovid.length > 0 && dataCovid.map(item => {
-                    return (
-                        <tr key={item.ID}>
-                            <td>{item.Date}</td>
-                            <td>{item.Confirmed}</td>
-                            <td>{item.Active}</td>
-                            <td>{item.Deaths}</td>
-                            <td>{item.Recovered}</td>
-                        </tr>
-                    )
-                })}
+        <>
+            <h3>Covid 19 tracking in Viet Name: </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Confirmed</th>
+                        <th>Active</th>
+                        <th>Deaths</th>
+                        <th>Recovered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dataCovid && dataCovid.length > 0 && dataCovid.map(item => {
+                        return (
+                            <tr key={item.ID}>
+                                <td>{item.Date}</td>
+                                <td>{item.Confirmed}</td>
+                                <td>{item.Active}</td>
+                                <td>{item.Deaths}</td>
+                                <td>{item.Recovered}</td>
+                            </tr>
+                        )
+                    })}
 
-            </tbody>
+                </tbody>
 
-        </table>
+            </table>
+        </>
     )
 }
 

@@ -29,15 +29,15 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
         <div className='todos-container'>
-          <div className='todo-child'>
+          <li className='todo-child'>
             Doing homework 1
-          </div>
-          <div className='todo-child'>
+          </li>
+          <li className='todo-child'>
             Doing homework 1
-          </div>
-          <div className='todo-child'>
+          </li>
+          <li className='todo-child'>
             Doing homework 1
-          </div>
+          </li>
         </div>
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>

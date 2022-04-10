@@ -38,6 +38,7 @@ function App() {
         <h1>Hello World with React Hook - {name}</h1>
         <Todo
           todos={todos}
+          title={'Do somethings'}
         />
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>

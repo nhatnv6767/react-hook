@@ -1,4 +1,12 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 const Covid = () => {
+
+    // componentDidMount
+    useEffect(() => {
+        axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
+    }, []);
     return (
         <table>
             <tr>

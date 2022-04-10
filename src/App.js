@@ -33,8 +33,9 @@ function App() {
   }
 
   const deleteDataTodo = (id) => {
-    todos = todos.filter(item => item.id !== id)
-    setTodos(todos)
+    let currentTodos = todos
+    currentTodos = currentTodos.filter(item => item.id !== id)
+    setTodos(currentTodos)
   }
   return (
     <div className="App">

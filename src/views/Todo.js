@@ -1,7 +1,10 @@
-const Todo = ({ title, todos }) => {
+const Todo = (props) => {
     // property: sinh ra để truyền dữ liệu qua lại giữa các component
     // chỉ truyền dữ liệu từ cha xuống con, top => bottom
-    // const { todos, title } = props
+    const { todos, title } = props
+    const handleDelete = (id) => {
+        alert(id)
+    }
     return (
         <div className='todos-container'>
             <div className='title'>
@@ -12,7 +15,9 @@ const Todo = ({ title, todos }) => {
                     <div key={todo.id}>
                         <li className='todo-child' >
                             {todo.title}
-                            <span> x</span>
+                            &nbsp;&nbsp;<span onClick={() => handleDelete(todo.id)}>
+                                x
+                            </span>
                         </li>
 
                     </div>

@@ -35,15 +35,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World with React Hook - {name}</h1>
-        <div className='todos-container'>
-          {todos.map(todo => {
-            return (
-              <li className='todo-child' key={todo.id}>
-                {todo.title}
-              </li>
-            )
-          })}
-        </div>
+
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
       </header>

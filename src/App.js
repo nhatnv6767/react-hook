@@ -16,6 +16,10 @@ function App() {
   ])
 
   const handleEventClick = (event) => {
+    if (!address) {
+      alert('empty input')
+      return
+    }
     // hook not merge state
     let newTodo = { id: Math.floor(Math.random() * 30000), title: address }
     setTodos([...todos, newTodo])

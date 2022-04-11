@@ -9,8 +9,8 @@ const Covid = () => {
 
     // componentDidMount
     useEffect(async () => {
-        setTimeout(async () => {
-            let res = await axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
+        try {
+            let res = await axios.get('https://api.covid19api.com/country/vietnammmm?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
             // if have response, and have res.data => res.data else []
             let data = res && res.data ? res.data : []
             // sau khi lấy data về, ta check nếu có data và data.length
@@ -22,11 +22,14 @@ const Covid = () => {
                     // cuối cùng bắt buộc phải return về cái item 
                     return item
                 })
+                data = data.reverse()
             }
-            data = data.reverse()
+
             setDataCovid(data)
             setLoading(false)
-        }, 3000)
+        } catch (e) { // exception
+            alert(e.message)
+        }
 
     }, []);
     return (

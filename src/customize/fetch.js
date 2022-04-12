@@ -1,7 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // Bắt đầu với từ use thì react mới hiểu là 1 custom hook
 const useFetch = () => {
+
+    const [dataCovid, setDataCovid] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
+
     // componentDidMount
     useEffect(async () => {
         try {
@@ -33,6 +38,10 @@ const useFetch = () => {
         }
 
     }, []);
+
+    return {
+
+    }
 }
 
 export default useFetch()

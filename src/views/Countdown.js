@@ -4,12 +4,14 @@ class Countdown extends Component {
     state = {
         count: 10
     }
+
+
     componentDidMount() {
         // setTimeout(() => {
         //     console.log('me')
         // }, 1000);
 
-        setInterval(() => {
+        var timer = setInterval(() => {
             this.setState({
                 count: this.state.count - 1
             })
@@ -21,6 +23,9 @@ class Countdown extends Component {
         // tức là sau khi có sự thay đổi
         if (prevState.count !== this.state.count && this.state.count === 0) {
             // clear timer
+            if (timer) {
+                clearInterval(timer);
+            }
         }
     }
     render() {

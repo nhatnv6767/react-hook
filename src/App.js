@@ -4,6 +4,7 @@ import Nav from './views/Nav'
 import { useState, useEffect } from 'react'
 import Todo from './views/Todo'
 import Covid from './views/Covid'
+import Countdown from './views/Countdown'
 
 function App() {
   // state sẽ trả ra 1 array, array này có 2 phần tử 
@@ -60,6 +61,8 @@ function App() {
       <header className="App-header">
         <Nav />
         <img src={logo} className="App-logo" alt="logo" />
+
+        <Countdown />
         <h1>Hello World with React Hook - {name}</h1>
         <Covid />
 

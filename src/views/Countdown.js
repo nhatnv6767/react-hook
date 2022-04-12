@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Countdown extends Component {
     state = {
-        count: 60
+        count: 10
     }
     componentDidMount() {
         // setTimeout(() => {
@@ -15,6 +15,13 @@ class Countdown extends Component {
             })
 
         }, 1000);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // tức là sau khi có sự thay đổi
+        if (prevState.count !== this.state.count && this.state.count === 0) {
+            // clear timer
+        }
     }
     render() {
         return (

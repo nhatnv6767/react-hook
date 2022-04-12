@@ -38,8 +38,9 @@ const useFetch = (url) => {
             setIsError(true)
             setIsLoading(false)
         }
-
-    }, []);
+        // dependencies, 1 khi url truyền vào được thay đổi, phải
+        // fetch lại data
+    }, [url]);
 
     return {
         data, isLoading, isError

@@ -28,10 +28,10 @@ const Covid = () => {
 
             setDataCovid(data)
             setIsLoading(false)
-            setIsError(true)
-        } catch (e) { // exception
             setIsError(false)
-            alert(e.message)
+        } catch (e) { // exception
+            setIsError(true)
+            setIsLoading(false)
         }
 
     }, []);

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class Countdown extends Component {
+    state = {
+        count: 60
+    }
     render() {
         return (
             <div>
-                Hello world with countdown
+                {this.state.count}
             </div>
         );
     }

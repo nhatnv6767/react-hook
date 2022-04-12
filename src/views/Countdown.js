@@ -4,6 +4,11 @@ class Countdown extends Component {
     state = {
         count: 60
     }
+    componentDidMount() {
+        setTimeout(() => {
+            console.log('me')
+        }, 1000);
+    }
     render() {
         return (
             <div>

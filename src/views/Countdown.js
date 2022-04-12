@@ -5,8 +5,15 @@ class Countdown extends Component {
         count: 60
     }
     componentDidMount() {
-        setTimeout(() => {
-            console.log('me')
+        // setTimeout(() => {
+        //     console.log('me')
+        // }, 1000);
+
+        setInterval(() => {
+            this.setState({
+                count: this.state.count - 1
+            })
+
         }, 1000);
     }
     render() {

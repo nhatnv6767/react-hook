@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import axios from "axios";
+import moment from "moment";
 
 // Bắt đầu với từ use thì react mới hiểu là 1 custom hook
-const useFetch = () => {
+const useFetch = (url) => {
 
-    const [dataCovid, setDataCovid] = useState([]);
+    const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
@@ -11,7 +13,7 @@ const useFetch = () => {
     useEffect(async () => {
         try {
             async function fetchData() {
-                let res = await axios.get('https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z')
+                let res = await axios.get(url)
                 // if have response, and have res.data => res.data else []
                 let data = res && res.data ? res.data : []
                 // sau khi lấy data về, ta check nếu có data và data.length
@@ -26,7 +28,7 @@ const useFetch = () => {
                     data = data.reverse()
                 }
 
-                setDataCovid(data)
+                setData(data)
                 setIsLoading(false)
                 setIsError(false)
             }
@@ -40,7 +42,7 @@ const useFetch = () => {
     }, []);
 
     return {
-
+        data, isLoading, isError
     }
 }
 

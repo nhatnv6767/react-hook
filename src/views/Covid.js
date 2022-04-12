@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import moment from "moment";
+
 
 const Covid = () => {
-
+    // 'https://api.covid19api.com/country/vietnam?from=2021-01-01T00:00:00Z&to=2021-04-11T00:00:00Z'
     const [dataCovid, setDataCovid] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);

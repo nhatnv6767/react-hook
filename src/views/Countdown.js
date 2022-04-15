@@ -43,7 +43,7 @@ class Countdown extends Component {
 const NewCountDown = () => {
     const [count, setCount] = useState(55)
     useEffect(() => {
-        setInterval(() => {
+        let timer = setInterval(() => {
             // setCount này chỉ chạy 1 lần
             // lý do là useEffect
             // nó sẽ hiểu như biến count trong này là tham chiếu
@@ -52,6 +52,11 @@ const NewCountDown = () => {
         }, 1000);
         // nên phải truyền vào 1 cái dependence
         // mỗi lần biến count thay đổi nó sẽ chạy vào đây
+        return () => {
+            // hook sẽ hiểu là mỗi lần useEffect được chạy
+            // thì nó sẽ chạy đống code ở trên, sau đó nhảy vào chạy ở đây
+            clearInterval(timer)
+        }
     }, [count])
     return (
         <div>{count} hooks</div>

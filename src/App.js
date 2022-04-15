@@ -73,39 +73,27 @@ function App() {
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
 
-          {/* <Countdown onTimesup={onTimesup} />
-
-          <span>------------------------------</span>
-          <NewCountDown onTimesup={onTimesup} />
-           */}
-
-
-          {/* <Todo
-          todos={todos}
-          title={'All todos'}
-          deleteDataTodo={deleteDataTodo}
-        />
-
-        <Todo
-          todos={todos.filter(item => item.type === 'Nut')}
-          title={`Nut's todos`}
-          deleteDataTodo={deleteDataTodo}
-        />
-        <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
-        <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button> */}
 
         </header>
 
         <Switch>
-          <Route path="/">
-
+          {/* <Route path="/">
             <Covid />
+          </Route> */}
+          <Route path="/timer">
+            <Countdown onTimesup={onTimesup} />
+
+            <span>------------------------------</span>
+            <NewCountDown onTimesup={onTimesup} />
           </Route>
-          <Route path="/users">
-            {/* <Users /> */}
-          </Route>
-          <Route path="/">
-            {/* <Home /> */}
+          <Route path="/todo">
+            <Todo
+              todos={todos}
+              title={'All todos'}
+              deleteDataTodo={deleteDataTodo}
+            />
+            <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
+            <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
           </Route>
         </Switch>
       </div>

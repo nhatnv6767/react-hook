@@ -77,9 +77,9 @@ function App() {
         </header>
 
         <Switch>
-          {/* <Route path="/">
+          <Route path="/" exact>
             <Covid />
-          </Route> */}
+          </Route>
           <Route path="/timer">
             <Countdown onTimesup={onTimesup} />
 

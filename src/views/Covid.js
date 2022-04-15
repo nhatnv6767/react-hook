@@ -10,7 +10,7 @@ const Covid = () => {
     const { data: dataCovid, isLoading, isError } = useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate.toISOString()}&to=${today.toISOString()}`)
 
     return (
-        <>
+        <div style={{ background: '#282c34' }}>
             <h3>Covid 19 tracking in Viet Name: </h3>
             <table>
                 <thead>
@@ -55,7 +55,7 @@ const Covid = () => {
                 </tbody>
 
             </table>
-        </>
+        </div>
     )
 }
 

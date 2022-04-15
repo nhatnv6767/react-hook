@@ -76,26 +76,28 @@ function App() {
 
         </header>
 
-        <Switch>
-          <Route path="/" exact>
-            <Covid />
-          </Route>
-          <Route path="/timer">
-            <Countdown onTimesup={onTimesup} />
+        <div>
+          <Switch>
+            <Route path="/" exact>
+              <Covid />
+            </Route>
+            <Route path="/timer">
+              <Countdown onTimesup={onTimesup} />
 
-            <span>------------------------------</span>
-            <NewCountDown onTimesup={onTimesup} />
-          </Route>
-          <Route path="/todo">
-            <Todo
-              todos={todos}
-              title={'All todos'}
-              deleteDataTodo={deleteDataTodo}
-            />
-            <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
-            <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
-          </Route>
-        </Switch>
+              <span>------------------------------</span>
+              <NewCountDown onTimesup={onTimesup} />
+            </Route>
+            <Route path="/todo">
+              <Todo
+                todos={todos}
+                title={'All todos'}
+                deleteDataTodo={deleteDataTodo}
+              />
+              <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
+              <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );

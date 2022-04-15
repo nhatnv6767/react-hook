@@ -4,7 +4,7 @@ import Nav from './views/Nav'
 import { useState, useEffect } from 'react'
 import Todo from './views/Todo'
 import Covid from './views/Covid'
-import { Countdown } from './views/Countdown'
+import { Countdown, NewCountDown } from './views/Countdown'
 
 function App() {
   // state sẽ trả ra 1 array, array này có 2 phần tử 
@@ -58,7 +58,7 @@ function App() {
   }
   // sự kiện khi hết giờ
   const onTimesup = () => {
-    alert('Times up')
+    // alert('Times up')
   }
   return (
     <div className="App">
@@ -67,6 +67,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 
         <Countdown onTimesup={onTimesup} />
+
+        <span>------------------------------</span>
+        <NewCountDown />
         <h1>Hello World with React Hook - {name}</h1>
         <Covid />
 

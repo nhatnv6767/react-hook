@@ -76,7 +76,7 @@ function App() {
 
         </header>
 
-        <div>
+        <div style={{ background: '#282c34', color: 'white' }}>
           <Switch>
             <Route path="/" exact>
               <Covid />
@@ -99,7 +99,7 @@ function App() {
           </Switch>
         </div>
       </div>
-    </Router>
+    </Router >
   );
 }
 // không dùng vòng for,

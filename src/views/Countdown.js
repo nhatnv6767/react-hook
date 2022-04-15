@@ -42,6 +42,11 @@ class Countdown extends Component {
 
 const NewCountDown = () => {
     const [count, setCount] = useState(55)
+    useEffect(() => {
+        setInterval(() => {
+            setCount(count - 1)
+        }, 1000);
+    }, [])
     return (
         <div>{count} hooks</div>
     )

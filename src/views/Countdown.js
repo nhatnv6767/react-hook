@@ -44,6 +44,10 @@ const NewCountDown = () => {
     const [count, setCount] = useState(55)
     useEffect(() => {
         setInterval(() => {
+            // setCount này chỉ chạy 1 lần
+            // lý do là useEffect
+            // nó sẽ hiểu như biến count trong này là tham chiếu
+            // nên lúc nào nó cũng sẽ hiểu biến count always by 55
             setCount(count - 1)
         }, 1000);
     }, [])

@@ -40,10 +40,11 @@ class Countdown extends Component {
 }
 
 
-const NewCountDown = () => {
+const NewCountDown = (props) => {
     const [count, setCount] = useState(10)
     useEffect(() => {
         if (count === 0) {
+            props.onTimesup();
             return
         }
         let timer = setInterval(() => {

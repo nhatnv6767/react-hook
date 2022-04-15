@@ -69,7 +69,7 @@ function App() {
         <Countdown onTimesup={onTimesup} />
 
         <span>------------------------------</span>
-        <NewCountDown />
+        <NewCountDown onTimesup={onTimesup} />
         <h1>Hello World with React Hook - {name}</h1>
         <Covid />
 

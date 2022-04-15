@@ -40,3 +40,11 @@ class Countdown extends Component {
 }
 
 export default Countdown;
+
+const NewCountDown = () => {
+    return (
+        <div>60 hooks</div>
+    )
+}
+
+export default NewCountDown;

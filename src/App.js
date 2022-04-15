@@ -58,7 +58,7 @@ function App() {
   }
   // sự kiện khi hết giờ
   const onTimesup = () => {
-    // alert('Times up')
+    alert('Times up')
   }
   return (
     <div className="App">

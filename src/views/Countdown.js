@@ -33,7 +33,7 @@ class Countdown extends Component {
     render() {
         return (
             <div>
-                {this.state.count}
+                {this.state.count} class
             </div>
         );
     }
@@ -41,8 +41,11 @@ class Countdown extends Component {
 
 
 const NewCountDown = () => {
-    const [count, setCount] = useState(55)
+    const [count, setCount] = useState(10)
     useEffect(() => {
+        if (count === 0) {
+            return
+        }
         let timer = setInterval(() => {
             // setCount này chỉ chạy 1 lần
             // lý do là useEffect

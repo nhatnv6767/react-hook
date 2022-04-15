@@ -4,7 +4,7 @@ import Nav from './views/Nav'
 import { useState, useEffect } from 'react'
 import Todo from './views/Todo'
 import Covid from './views/Covid'
-import Countdown from './views/Countdown'
+import { Countdown } from './views/Countdown'
 
 function App() {
   // state sẽ trả ra 1 array, array này có 2 phần tử 

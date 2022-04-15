@@ -39,7 +39,6 @@ class Countdown extends Component {
     }
 }
 
-export default Countdown;
 
 const NewCountDown = () => {
     return (
@@ -47,4 +46,5 @@ const NewCountDown = () => {
     )
 }
 
-export default NewCountDown;
+export { Countdown, NewCountDown };
+

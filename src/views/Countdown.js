@@ -50,7 +50,9 @@ const NewCountDown = () => {
             // nên lúc nào nó cũng sẽ hiểu biến count always by 55
             setCount(count - 1)
         }, 1000);
-    }, [])
+        // nên phải truyền vào 1 cái dependence
+        // mỗi lần biến count thay đổi nó sẽ chạy vào đây
+    }, [count])
     return (
         <div>{count} hooks</div>
     )

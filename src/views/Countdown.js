@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 class Countdown extends Component {
     state = {
@@ -41,8 +41,9 @@ class Countdown extends Component {
 
 
 const NewCountDown = () => {
+    const [count, setCount] = useState(55)
     return (
-        <div>60 hooks</div>
+        <div>{count} hooks</div>
     )
 }
 

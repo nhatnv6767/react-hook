@@ -56,13 +56,17 @@ function App() {
     currentTodos = currentTodos.filter(item => item.id !== id)
     setTodos(currentTodos)
   }
+  // sự kiện khi hết giờ
+  const onTimesup = () => {
+    alert('Times up')
+  }
   return (
     <div className="App">
       <header className="App-header">
         <Nav />
         <img src={logo} className="App-logo" alt="logo" />
 
-        <Countdown />
+        <Countdown onTimesup={onTimesup} />
         <h1>Hello World with React Hook - {name}</h1>
         <Covid />
 

@@ -26,6 +26,7 @@ class Countdown extends Component {
             // clear timer
             if (this.timer) {
                 clearInterval(this.timer);
+                this.props.onTimesup();
             }
         }
     }

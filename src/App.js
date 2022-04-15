@@ -5,6 +5,12 @@ import { useState, useEffect } from 'react'
 import Todo from './views/Todo'
 import Covid from './views/Covid'
 import { Countdown, NewCountDown } from './views/Countdown'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   // state sẽ trả ra 1 array, array này có 2 phần tử 
@@ -61,20 +67,20 @@ function App() {
     // alert('Times up')
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <Nav />
-        <img src={logo} className="App-logo" alt="logo" />
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Nav />
+          <img src={logo} className="App-logo" alt="logo" />
 
-        <Countdown onTimesup={onTimesup} />
+          {/* <Countdown onTimesup={onTimesup} />
 
-        <span>------------------------------</span>
-        <NewCountDown onTimesup={onTimesup} />
-        <h1>Hello World with React Hook - {name}</h1>
-        <Covid />
+          <span>------------------------------</span>
+          <NewCountDown onTimesup={onTimesup} />
+           */}
 
 
-        {/* <Todo
+          {/* <Todo
           todos={todos}
           title={'All todos'}
           deleteDataTodo={deleteDataTodo}
@@ -88,8 +94,22 @@ function App() {
         <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button> */}
 
-      </header>
-    </div>
+        </header>
+
+        <Switch>
+          <Route path="/">
+
+            <Covid />
+          </Route>
+          <Route path="/users">
+            {/* <Users /> */}
+          </Route>
+          <Route path="/">
+            {/* <Home /> */}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 // không dùng vòng for,

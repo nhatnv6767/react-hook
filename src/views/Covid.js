@@ -8,10 +8,14 @@ const Covid = () => {
     // nên mỗi lần render lại component nó sẽ lấy tại khoảnh khắc ấy
     // tương đương với milisecond
     // const today = new Date(new Date().setHours(0, 0, 0, 0));
-    const today = moment().startOf('day');
-    const priorDate = today.subtract(30, 'days')
+    const today = moment().startOf('day').toISOString(true);
+    const priorDate = moment().startOf('day').subtract(30, 'days').toISOString(true);
+
+
+
     // dataCovid:data <=> let dataCovid = useFetch(link).data
-    const { data: dataCovid, isLoading, isError } = useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate.toISOString()}&to=${today.toISOString()}`)
+    const { data: dataCovid, isLoading, isError } =
+        useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate}&to=${today}`)
 
     return (
         <>

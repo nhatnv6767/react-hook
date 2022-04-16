@@ -13,4 +13,7 @@ function Nav() {
     )
 }
 
+// khi dùng Link nó sẽ cancel request gửi lên server
+// tức là hành động mặc định của thẻ a sẽ gửi 1 request lên phía server
+
 export default Nav

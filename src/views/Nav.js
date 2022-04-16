@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 function Nav() {
     return (
         <div className="topnav">
-            <NavLink activeClassName="activeNav" to="/">Home</NavLink>
+            <NavLink activeClassName="activeNav" to="/" exact>Home</NavLink>
             <NavLink activeClassName="activeNav" to="/timer">Timer Apps</NavLink>
             <NavLink activeClassName="activeNav" to="/todo">Todo Apps</NavLink>
             <NavLink activeClassName="activeNav" to="/secret">Secret</NavLink>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Nav.scss'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Nav() {
     return (
@@ -15,5 +15,7 @@ function Nav() {
 
 // khi dùng Link nó sẽ cancel request gửi lên server
 // tức là hành động mặc định của thẻ a sẽ gửi 1 request lên phía server
+
+// NavLink để set cái class active vào
 
 export default Nav

@@ -3,9 +3,13 @@ import useFetch from "../customize/fetch"
 import moment from "moment"
 
 const Covid = () => {
-
-    const today = new Date(new Date().setHours(0, 0, 0, 0));
-    const priorDate = moment().subtract(30, 'days')
+    // code cũ sẽ tạo ra nhiều request
+    // vì mỗi 1 lần tạo new Date nó sẽ lấy thời gian hiện tại 
+    // nên mỗi lần render lại component nó sẽ lấy tại khoảnh khắc ấy
+    // tương đương với milisecond
+    // const today = new Date(new Date().setHours(0, 0, 0, 0));
+    const today = moment().startOf('day');
+    const priorDate = today.subtract(30, 'days')
     // dataCovid:data <=> let dataCovid = useFetch(link).data
     const { data: dataCovid, isLoading, isError } = useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate.toISOString()}&to=${today.toISOString()}`)
 

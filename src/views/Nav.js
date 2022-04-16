@@ -5,10 +5,10 @@ import { Link, NavLink } from 'react-router-dom'
 function Nav() {
     return (
         <div className="topnav">
-            <Link className="active" to="/">Home</Link>
-            <Link to="/timer">Timer Apps</Link>
-            <Link to="/todo">Todo Apps</Link>
-            <Link to="/secret">Secret</Link>
+            <NavLink activeClassName="active" to="/">Home</NavLink>
+            <NavLink to="/timer">Timer Apps</NavLink>
+            <NavLink to="/todo">Todo Apps</NavLink>
+            <NavLink to="/secret">Secret</NavLink>
         </div>
     )
 }

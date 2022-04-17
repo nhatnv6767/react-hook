@@ -14,7 +14,7 @@ function DetailBlog() {
     const handleBackData = () => {
         history.push("/blog")
     }
-    // console.log("Check data detail: ", dataBlogDetail)
+
     return (
         <>
             <div>
@@ -27,7 +27,7 @@ function DetailBlog() {
                 {dataBlogDetail &&
                     <>
                         <div className="title">
-                            Blog ID: {id} --- {dataBlogDetail.title}
+                            Blog ID: {id} --- {isLoading ? 'Loading data...' : dataBlogDetail.title}
                         </div>
                         <div className="content">
                             {dataBlogDetail.body}

@@ -4,16 +4,12 @@ import moment from "moment";
 
 // Bắt đầu với từ use thì react mới hiểu là 1 custom hook
 const useFetch = (url) => {
-
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
-
     // componentDidMount
     useEffect(() => {
-
         const ourRequest = axios.CancelToken.source(); // <-- 1st step
-
         async function fetchData() {
             try {
                 let res = await axios.get(url, {
@@ -32,25 +28,24 @@ const useFetch = (url) => {
                     })
                     data = data.reverse()
                 }
-
                 setData(data)
                 setIsLoading(false)
                 setIsError(false)
 
-
-
-
-            } catch (e) { // exception
-                console.log(">>>>> EEEEEEE", e)
-                setIsError(true)
-                setIsLoading(false)
+            } catch (err) { // exception
+                // nếu mà biến là 1 instant của axios mà đã cancel 
+                if (axios.isCancel(err)) {
+                    console.log('Request canceled', err.message)
+                } else {
+                    // handle error
+                    setIsError(true)
+                    setIsLoading(false)
+                }
             }
         }
-
         setTimeout(() => {
             fetchData();
         }, 5000)
-
         return () => {
             ourRequest.cancel() // <-- 3rd step
         }

@@ -15,24 +15,31 @@ function Blog() {
     }
 
     return (
-        <div className="blogs-container">
-            {isLoading === false && newData && newData.length > 0 && newData.map(item => {
-                return (
-                    <div className="single-blog" key={item.id}>
-                        <div className="title">{item.title}</div>
-                        <div className="content">{item.body}</div>
-                        <button>
-                            <Link to={`/blog/${item.id}`}>
-                                View detail
-                            </Link>
-                        </button>
-                    </div>
-                )
-            })}
-            {isLoading &&
-                <div style={{ textAlign: 'center !important', width: '100%' }}>Loading data...</div>
-            }
-        </div>
+        <>
+            <div>
+                <button>
+                    + Add new blog
+                </button>
+            </div>
+            <div className="blogs-container">
+                {isLoading === false && newData && newData.length > 0 && newData.map(item => {
+                    return (
+                        <div className="single-blog" key={item.id}>
+                            <div className="title">{item.title}</div>
+                            <div className="content">{item.body}</div>
+                            <button>
+                                <Link to={`/blog/${item.id}`}>
+                                    View detail
+                                </Link>
+                            </button>
+                        </div>
+                    )
+                })}
+                {isLoading &&
+                    <div style={{ textAlign: 'center !important', width: '100%' }}>Loading data...</div>
+                }
+            </div>
+        </>
     )
 }
 

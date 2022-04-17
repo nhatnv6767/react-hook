@@ -1,10 +1,13 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 function DetailBlog() {
     let { id } = useParams();
     return (
-        <div>DetailBlog with id: {id}</div>
+        <>
+            <div>&#60;-- Back</div>
+            <h1>DetailBlog with id: {id}</h1>
+        </>
     )
 }
 

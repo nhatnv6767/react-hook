@@ -27,7 +27,7 @@ function DetailBlog() {
                 {dataBlogDetail &&
                     <>
                         <div className="title">
-                            {dataBlogDetail.title}
+                            Blog ID: {id} --- {dataBlogDetail.title}
                         </div>
                         <div className="content">
                             {dataBlogDetail.body}

@@ -45,9 +45,9 @@ const useFetch = (url) => {
         }
         setTimeout(() => {
             fetchData();
-        }, 5000)
+        }, 300)
         return () => {
-            ourRequest.cancel() // <-- 3rd step
+            ourRequest.cancel('Operation canceled by the user.') // <-- 3rd step
         }
         // dependencies, 1 khi url truyền vào được thay đổi, phải
         // fetch lại data

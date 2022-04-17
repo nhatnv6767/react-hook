@@ -104,7 +104,7 @@ function App() {
           <Route path="/blog/:id">
             <DetailBlog />
           </Route>
-          <Route path="add-new-blog">
+          <Route path="/add-new-blog">
             <AddNewBlog />
           </Route>
         </Switch>

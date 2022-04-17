@@ -13,8 +13,9 @@ const useFetch = (url) => {
     useEffect(() => {
 
         const ourRequest = axios.CancelToken.source(); // <-- 1st step
-        try {
-            async function fetchData() {
+
+        async function fetchData() {
+            try {
                 let res = await axios.get(url, {
                     cancelToken: ourRequest.token, // <-- 2nd step
                 })
@@ -35,17 +36,20 @@ const useFetch = (url) => {
                 setData(data)
                 setIsLoading(false)
                 setIsError(false)
+
+
+
+
+            } catch (e) { // exception
+                console.log(">>>>> EEEEEEE", e)
+                setIsError(true)
+                setIsLoading(false)
             }
-            setTimeout(() => {
-                fetchData();
-            }, 5000)
-
-
-        } catch (e) { // exception
-            console.log(">>>>> EEEEEEE", e)
-            setIsError(true)
-            setIsLoading(false)
         }
+
+        setTimeout(() => {
+            fetchData();
+        }, 5000)
 
         return () => {
             ourRequest.cancel() // <-- 3rd step

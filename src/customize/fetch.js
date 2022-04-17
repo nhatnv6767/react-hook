@@ -42,6 +42,7 @@ const useFetch = (url) => {
 
 
         } catch (e) { // exception
+            console.log(">>>>> EEEEEEE", e)
             setIsError(true)
             setIsLoading(false)
         }

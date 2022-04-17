@@ -1,6 +1,7 @@
 import React from 'react'
 import useFetch from '../customize/fetch'
 import './Blog.scss'
+import { Link } from 'react-router-dom'
 
 function Blog() {
 
@@ -20,7 +21,11 @@ function Blog() {
                     <div className="single-blog">
                         <div className="title">{item.title}</div>
                         <div className="content">{item.body}</div>
-                        <button>View detail</button>
+                        <button>
+                            <Link to={`/blog/${item.id}`}>
+                                View detail
+                            </Link>
+                        </button>
                     </div>
                 )
             })}

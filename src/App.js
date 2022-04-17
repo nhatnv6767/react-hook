@@ -30,7 +30,7 @@ function App() {
   // will run after first render
   // will run when re-render
   useEffect(() => {
-    console.log('>>>> Run use effect address')
+    // console.log('>>>> Run use effect address')
     // việc thêm [] <dependencies> nghĩa là hàm useEffect này chỉ chạy duy nhất 
     // 1 lần <=> ComponentDidmount
     // chạy 1 lần duy nhất sau khi render lần đầu
@@ -39,7 +39,7 @@ function App() {
 
 
   useEffect(() => {
-    console.log('>>>> Run use effect todos')
+    // console.log('>>>> Run use effect todos')
   }, [todos]);
 
 

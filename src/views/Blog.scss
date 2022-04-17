@@ -52,7 +52,8 @@
     text-align: left;
 
     .text-add-new {
-        margin: 10px 0;
+        margin    : 10px 0;
+        text-align: center;
     }
 
     .inputs-data {
@@ -60,5 +61,9 @@
         margin        : 5px;
         display       : flex;
         flex-direction: column;
+    }
+
+    button {
+        margin-left: 10px;
     }
 }

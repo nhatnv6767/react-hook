@@ -15,7 +15,12 @@ function Blog() {
     return (
         <>
             {newData && newData.length > 0 && newData.map(item => {
-
+                return (
+                    <div className="single-blog">
+                        <div className="title">{item.title}</div>
+                        <div className="content">{item.body}</div>
+                    </div>
+                )
             })}
         </>
     )

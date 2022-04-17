@@ -1,13 +1,20 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
+import useFetch from '../customize/fetch'
+import './Blog.scss'
 
 function DetailBlog() {
     let { id } = useParams();
     let history = useHistory();
 
+    const { data: dataBlogDetail, isLoading, isError } =
+        useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`, false);
+
+
     const handleBackData = () => {
         history.push("/blog")
     }
+    // console.log("Check data detail: ", dataBlogDetail)
     return (
         <>
             <div>
@@ -15,7 +22,20 @@ function DetailBlog() {
                     &#60;-- Back
                 </span>
             </div>
-            <h1>DetailBlog with id: {id}</h1>
+            <div className="blog-detail">
+
+                {dataBlogDetail &&
+                    <>
+                        <div className="title">
+                            {dataBlogDetail.title}
+                        </div>
+                        <div className="content">
+                            {dataBlogDetail.body}
+                        </div>
+                    </>
+                }
+
+            </div>
         </>
     )
 }

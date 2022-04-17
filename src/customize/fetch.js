@@ -11,9 +11,13 @@ const useFetch = (url) => {
 
     // componentDidMount
     useEffect(() => {
+
+        const ourRequest = axios.CancelToken.source(); // <-- 1st step
         try {
             async function fetchData() {
-                let res = await axios.get(url)
+                let res = await axios.get(url, {
+                    cancelToken: ourRequest.token, // <-- 2nd step
+                })
                 // if have response, and have res.data => res.data else []
                 let data = res && res.data ? res.data : []
                 // sau khi lấy data về, ta check nếu có data và data.length
@@ -32,11 +36,18 @@ const useFetch = (url) => {
                 setIsLoading(false)
                 setIsError(false)
             }
-            fetchData();
+            setTimeout(() => {
+                fetchData();
+            }, 5000)
+
 
         } catch (e) { // exception
             setIsError(true)
             setIsLoading(false)
+        }
+
+        return () => {
+            ourRequest.cancel() // <-- 3rd step
         }
         // dependencies, 1 khi url truyền vào được thay đổi, phải
         // fetch lại data

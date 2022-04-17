@@ -16,9 +16,9 @@ function Blog() {
 
     return (
         <div className="blogs-container">
-            {newData && newData.length > 0 && newData.map(item => {
+            {isLoading === false && newData && newData.length > 0 && newData.map(item => {
                 return (
-                    <div className="single-blog">
+                    <div className="single-blog" key={item.id}>
                         <div className="title">{item.title}</div>
                         <div className="content">{item.body}</div>
                         <button>
@@ -29,6 +29,9 @@ function Blog() {
                     </div>
                 )
             })}
+            {isLoading &&
+                <div style={{ textAlign: 'center !important' }}>Loading data...</div>
+            }
         </div>
     )
 }

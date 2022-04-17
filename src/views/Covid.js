@@ -15,7 +15,7 @@ const Covid = () => {
 
     // dataCovid:data <=> let dataCovid = useFetch(link).data
     const { data: dataCovid, isLoading, isError } =
-        useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate}&to=${today}`)
+        useFetch(`https://api.covid19api.com/country/vietnam?from=${priorDate}&to=${today}`, true);
 
     return (
         <>

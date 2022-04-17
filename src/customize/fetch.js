@@ -3,7 +3,7 @@ import axios from "axios";
 import moment from "moment";
 
 // Bắt đầu với từ use thì react mới hiểu là 1 custom hook
-const useFetch = (url) => {
+const useFetch = (url, isCovidData) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
@@ -20,7 +20,7 @@ const useFetch = (url) => {
                 // sau khi lấy data về, ta check nếu có data và data.length
                 // sau đó sẽ map qua, lọc qua xuyên suốt cái mảng đó
                 // gán ngược lại cái biến Date của nó bằng moment.....
-                if (data && data.length > 0) {
+                if (data && data.length > 0 && isCovidData) {
                     data.map(item => {
                         item.Date = moment(item.Date).format('DD/MM/YYYY');
                         // cuối cùng bắt buộc phải return về cái item 

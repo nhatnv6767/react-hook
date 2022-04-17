@@ -6,6 +6,7 @@ import Todo from './views/Todo'
 import Covid from './views/Covid'
 import { Countdown, NewCountDown } from './views/Countdown'
 import Blog from './views/Blog'
+import DetailBlog from './views/DetailBlog'
 import {
   BrowserRouter as Router,
   Switch,
@@ -96,8 +97,11 @@ function App() {
             <input type="text" value={address} onChange={(event) => handleOnChangeInput(event)} />
             <button type="button" onClick={(event) => handleEventClick(event)}>Click me</button>
           </Route>
-          <Route path="/blog">
+          <Route path="/blog" exact>
             <Blog />
+          </Route>
+          <Route path="/blog/:id">
+            <DetailBlog />
           </Route>
         </Switch>
       </div>

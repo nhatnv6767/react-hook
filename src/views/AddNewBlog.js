@@ -5,15 +5,15 @@ function AddNewBlog() {
     return (
         <div className="add-new-container">
             <div className="text-add-new">--- Add new blog ---</div>
-            <div>
+            <div className="inputs-data">
                 <label>Title: </label>
                 <input type="text" />
             </div>
-            <div>
+            <div className="inputs-data">
                 <label>Content: </label>
                 <input type="text" />
             </div>
-            <button>Submit</button>
+            <button className="btn-add-new">Submit</button>
         </div>
     )
 }

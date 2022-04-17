@@ -16,7 +16,7 @@ function Blog() {
 
     return (
         <>
-            <div>
+            <div className="btn-add-new">
                 <button>
                     + Add new blog
                 </button>

@@ -45,11 +45,12 @@
 }
 
 .add-new-container {
-    max-width : 400px;
-    border    : 1px solid grey;
-    padding   : 5px;
-    margin    : 0 auto;
-    text-align: left;
+    max-width    : 400px;
+    border       : 1px solid grey;
+    border-radius: 3px;
+    padding      : 15px;
+    margin       : 0 auto;
+    text-align   : left;
 
     .text-add-new {
         margin    : 10px 0;

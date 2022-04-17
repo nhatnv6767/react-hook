@@ -1,5 +1,6 @@
 import React from 'react'
 import useFetch from '../customize/fetch'
+import './Blog.scss'
 
 function Blog() {
 
@@ -13,16 +14,16 @@ function Blog() {
     }
 
     return (
-        <>
+        <div className="blogs-container">
             {newData && newData.length > 0 && newData.map(item => {
                 return (
                     <div className="single-blog">
-                        <div className="title">{item.title}</div>
+                        <div className="title">Title: {item.title}</div>
                         <div className="content">{item.body}</div>
                     </div>
                 )
             })}
-        </>
+        </div>
     )
 }
 

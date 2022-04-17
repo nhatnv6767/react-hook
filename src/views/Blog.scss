@@ -1,0 +1,11 @@
+.blogs-container {
+    display: flex;
+    flex-direction: column;
+
+    .single-blog{
+        border: 1px solid grey;
+        border-radius: 3px;
+        padding: 10px;
+        margin: 0 10px
+    }
+}

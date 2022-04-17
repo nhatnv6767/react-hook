@@ -20,6 +20,7 @@ function Blog() {
                     <div className="single-blog">
                         <div className="title">{item.title}</div>
                         <div className="content">{item.body}</div>
+                        <button>View detail</button>
                     </div>
                 )
             })}

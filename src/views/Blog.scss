@@ -11,5 +11,11 @@
         padding      : 10px;
         margin       : 0 10px;
         max-width    : 445px;
+
+        text-align: left !important;
+
+        .content {
+            padding: 10px 0;
+        }
     }
 }

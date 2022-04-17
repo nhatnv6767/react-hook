@@ -6,16 +6,17 @@ function Blog() {
     const { data: dataBlogs, isLoading, isError } =
         useFetch(`https://jsonplaceholder.typicode.com/posts`, false);
 
-
+    let newData = [];
     if (dataBlogs && dataBlogs.length > 0) {
         // lấy giá trị của phần tử từ 0 đến 10
-        let newData = dataBlogs.slice(0, 10)
-        console.log('Check DATA BLOG: ', newData);
+        newData = dataBlogs.slice(0, 10)
     }
 
     return (
         <>
-            { }
+            {newData && newData.length > 0 && newData.map(item => {
+
+            })}
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Blog.scss'
 import { useState } from 'react'
+import axios from 'axios'
 
 function AddNewBlog() {
     // state
@@ -15,6 +16,12 @@ function AddNewBlog() {
         if (!content) {
             alert('Empty content')
             return
+        }
+
+        let data = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
         }
     }
     return (

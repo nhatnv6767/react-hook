@@ -29,31 +29,18 @@ function Blog() {
 
     return (
         <>
+            <Button variant="primary" className="my-3" onClick={handleShow}>
+                + Add new blog
+            </Button>
 
-
-            <>
-                <Button variant="primary" className="my-3" onClick={handleShow}>
-                    + Add new blog
-                </Button>
-
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Add New Blog</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <AddNewBlog />
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-            </>
-
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add New Blog</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <AddNewBlog />
+                </Modal.Body>
+            </Modal>
 
             <div className="blogs-container">
                 {isLoading === false && newData && newData.length > 0 && newData.map(item => {

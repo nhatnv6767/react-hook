@@ -4,7 +4,7 @@ import './Blog.scss'
 import { Link, useHistory } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AddNewBlog from './AddNewBlog'
 
 function Blog() {
@@ -18,11 +18,15 @@ function Blog() {
     const { data: dataBlogs, isLoading, isError } =
         useFetch(`https://jsonplaceholder.typicode.com/posts`, false);
 
-    if (dataBlogs && dataBlogs.length > 0) {
-        // lấy giá trị của phần tử từ 0 đến 10
-        let newDataSimple = dataBlogs.slice(0, 10)
-        setNewData(newDataSimple)
-    }
+
+
+    useEffect(() => {
+        if (dataBlogs && dataBlogs.length > 0) {
+            // lấy giá trị của phần tử từ 0 đến 10
+            let data = dataBlogs.slice(0, 10)
+            setNewData(data)
+        }
+    }, [dataBlogs])
 
     const handleAddNew = (blog) => {
         setShow(false);

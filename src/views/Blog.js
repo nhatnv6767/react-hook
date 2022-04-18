@@ -23,8 +23,10 @@ function Blog() {
         newData = dataBlogs.slice(0, 10)
     }
 
-    const handleAddNew = () => {
-        history.push("/add-new-blog")
+    const handleAddNew = (blog) => {
+        setShow(false);
+        newData.unshift(blog);
+        console.log(">>>> Check handle add new: ", newData);
     }
 
     return (

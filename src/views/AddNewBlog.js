@@ -26,8 +26,8 @@ function AddNewBlog() {
 
         let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
         if (res && res.data) {
-            let newBlogs = res.data
-            console.log(newBlogs)
+            let newBlog = res.data
+            console.log(newBlog)
         }
 
     }

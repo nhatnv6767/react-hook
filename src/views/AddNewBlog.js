@@ -25,8 +25,11 @@ function AddNewBlog() {
         }
 
         let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
+        if (res && res.data) {
+            let newBlogs = res.data
+            console.log(newBlogs)
+        }
 
-        console.log("CHECK RES POST DATA: ", res)
     }
     return (
         <div className="add-new-container">

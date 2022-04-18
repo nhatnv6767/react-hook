@@ -11,11 +11,19 @@ function AddNewBlog() {
             <div className="text-add-new">--- Add new blog ---</div>
             <div className="inputs-data">
                 <label>Title: </label>
-                <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
+                />
             </div>
             <div className="inputs-data">
                 <label>Content: </label>
-                <input type="text" />
+                <input
+                    type="text"
+                    value={content}
+                    onChange={(event) => setContent(event.target.value)}
+                />
             </div>
             <button className="btn-add-new">Submit</button>
         </div>

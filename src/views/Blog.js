@@ -33,12 +33,12 @@ function Blog() {
 
             <>
                 <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
+                    + Add new blog
                 </Button>
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Add New Blog</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <AddNewBlog />
@@ -55,14 +55,6 @@ function Blog() {
             </>
 
 
-            <div>
-                <button
-                    className="btn-add-new"
-                    onClick={handleAddNew}
-                >
-                    + Add new blog
-                </button>
-            </div>
             <div className="blogs-container">
                 {isLoading === false && newData && newData.length > 0 && newData.map(item => {
                     return (

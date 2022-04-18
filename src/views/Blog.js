@@ -14,7 +14,6 @@ function Blog() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    let history = useHistory();
     const { data: dataBlogs, isLoading, isError } =
         useFetch(`https://jsonplaceholder.typicode.com/posts`, false);
 
@@ -29,9 +28,9 @@ function Blog() {
     }, [dataBlogs])
 
     const handleAddNew = (blog) => {
-        setShow(false);
         let data = newData
         data.unshift(blog);
+        setShow(false);
         setNewData(data)
     }
 

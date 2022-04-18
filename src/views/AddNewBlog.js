@@ -6,6 +6,10 @@ function AddNewBlog() {
     // state
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
+
+    const handleSubmitBtn = () => {
+        console.log('Check DATA: ', title, content)
+    }
     return (
         <div className="add-new-container">
             <div className="text-add-new">--- Add new blog ---</div>
@@ -25,7 +29,12 @@ function AddNewBlog() {
                     onChange={(event) => setContent(event.target.value)}
                 />
             </div>
-            <button className="btn-add-new">Submit</button>
+            <button
+                className="btn-add-new"
+                onClick={handleSubmitBtn}
+            >
+                Submit
+            </button>
         </div>
     )
 }

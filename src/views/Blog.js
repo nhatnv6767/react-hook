@@ -9,6 +9,7 @@ import AddNewBlog from './AddNewBlog'
 
 function Blog() {
 
+    const [newData, setNewData] = useState([])
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -17,16 +18,17 @@ function Blog() {
     const { data: dataBlogs, isLoading, isError } =
         useFetch(`https://jsonplaceholder.typicode.com/posts`, false);
 
-    let newData = [];
     if (dataBlogs && dataBlogs.length > 0) {
         // lấy giá trị của phần tử từ 0 đến 10
-        newData = dataBlogs.slice(0, 10)
+        let newDataSimple = dataBlogs.slice(0, 10)
+        setNewData(newDataSimple)
     }
 
     const handleAddNew = (blog) => {
         setShow(false);
-        newData.unshift(blog);
-        console.log(">>>> Check handle add new: ", newData);
+        let data = newData
+        data.unshift(blog);
+        setNewData(data)
     }
 
     return (

@@ -2,6 +2,7 @@ import React from 'react'
 import useFetch from '../customize/fetch'
 import './Blog.scss'
 import { Link, useHistory } from 'react-router-dom'
+import Modal from 'react-bootstrap/Modal'
 
 function Blog() {
     let history = useHistory();
@@ -21,7 +22,10 @@ function Blog() {
     return (
         <>
             <div>
-                <button className="btn-add-new" onClick={handleAddNew}>
+                <button
+                    className="btn-add-new"
+                    onClick={handleAddNew}
+                >
                     + Add new blog
                 </button>
             </div>
@@ -52,3 +56,36 @@ export default Blog
 // lần đầu khi chạy log ra 3 lần, vì ở fetch custom có 3 tham số
 // ở fetch chúng ta set 3 lần (setData, setIsLoading, setIsError), 3 lần set lại state
 // nên component của ta cần render lại 3 lần
+
+
+function Example() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+        <>
+            <Button variant="primary" onClick={handleShow}>
+                Launch demo modal
+            </Button>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
+}
+
+render(<Example />);

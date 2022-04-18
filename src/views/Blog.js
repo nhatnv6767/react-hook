@@ -40,7 +40,7 @@ function Blog() {
                     <Modal.Title>Add New Blog</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <AddNewBlog />
+                    <AddNewBlog handleAddNew={handleAddNew} />
                 </Modal.Body>
             </Modal>
 

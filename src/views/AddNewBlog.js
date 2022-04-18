@@ -3,7 +3,7 @@ import './Blog.scss'
 import { useState } from 'react'
 import axios from 'axios'
 
-function AddNewBlog() {
+function AddNewBlog(props) {
     // state
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -27,7 +27,7 @@ function AddNewBlog() {
         let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
         if (res && res.data) {
             let newBlog = res.data
-            console.log(newBlog)
+            props.handleAddNew(newBlog)
         }
 
     }

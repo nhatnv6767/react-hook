@@ -34,6 +34,12 @@ function Blog() {
         setNewData(data)
     }
 
+    const deletePost = (id) => {
+        let data = newData;
+        data = data.filter(item => item.id !== id);
+        setNewData(data)
+    }
+
     return (
         <>
             <Button variant="primary" className="my-3" onClick={handleShow}>
@@ -57,6 +63,7 @@ function Blog() {
                                 <span>{item.title} </span>
                                 <span
                                     style={{ cursor: 'pointer' }}
+                                    onClick={deletePost}
                                 >
                                     X
                                 </span>

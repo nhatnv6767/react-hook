@@ -19,10 +19,12 @@ function AddNewBlog() {
         }
 
         let data = {
-            title: 'foo',
-            body: 'bar',
+            title: title,
+            body: content,
             userId: 1,
         }
+
+        let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
     }
     return (
         <div className="add-new-container">

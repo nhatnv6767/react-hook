@@ -32,7 +32,7 @@ function Blog() {
 
 
             <>
-                <Button variant="primary" onClick={handleShow}>
+                <Button variant="primary" className="my-3" onClick={handleShow}>
                     + Add new blog
                 </Button>
 
@@ -83,4 +83,6 @@ export default Blog
 // ở fetch chúng ta set 3 lần (setData, setIsLoading, setIsError), 3 lần set lại state
 // nên component của ta cần render lại 3 lần
 
+
+// my-3: m: mergen, y la trục y, 3 là đơn vị 1 <=> 0.25rem
 

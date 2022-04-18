@@ -8,7 +8,8 @@ function AddNewBlog() {
     const [content, setContent] = useState('')
 
     const handleSubmitBtn = () => {
-        if (title === '' || title === undefined || title === 'null') alert('empty title')
+        if (!title) alert('Empty title')
+        if (!content) alert('Empty content')
     }
     return (
         <div className="add-new-container">

@@ -8,7 +8,7 @@ function AddNewBlog() {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
 
-    const handleSubmitBtn = () => {
+    const handleSubmitBtn = async () => {
         if (!title) {
             alert('Empty title')
             return
@@ -25,6 +25,8 @@ function AddNewBlog() {
         }
 
         let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
+
+        console.log("CHECK RES POST DATA: ", res)
     }
     return (
         <div className="add-new-container">

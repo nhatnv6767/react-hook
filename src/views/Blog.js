@@ -63,7 +63,7 @@ function Blog() {
                                 <span>{item.title} </span>
                                 <span
                                     style={{ cursor: 'pointer' }}
-                                    onClick={deletePost}
+                                    onClick={() => deletePost(item.id)}
                                 >
                                     X
                                 </span>

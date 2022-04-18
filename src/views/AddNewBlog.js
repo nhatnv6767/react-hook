@@ -11,7 +11,7 @@ function AddNewBlog() {
             <div className="text-add-new">--- Add new blog ---</div>
             <div className="inputs-data">
                 <label>Title: </label>
-                <input type="text" value={title} />
+                <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
             </div>
             <div className="inputs-data">
                 <label>Content: </label>

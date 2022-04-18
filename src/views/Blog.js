@@ -53,7 +53,14 @@ function Blog() {
                 {isLoading === false && newData && newData.length > 0 && newData.map(item => {
                     return (
                         <div className="single-blog" key={item.id}>
-                            <div className="title">{item.title}</div>
+                            <div className="title">
+                                <span>{item.title} </span>
+                                <span
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    X
+                                </span>
+                            </div>
                             <div className="content">{item.body}</div>
                             <button>
                                 <Link to={`/blog/${item.id}`}>

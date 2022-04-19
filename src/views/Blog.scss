@@ -68,3 +68,12 @@
         margin-left: 10px;
     }
 }
+
+.youtube-search-container {
+    input {
+        outline  : none;
+        min-width: 360px;
+        border   : none;
+        padding  : 3px 5px;
+    }
+}

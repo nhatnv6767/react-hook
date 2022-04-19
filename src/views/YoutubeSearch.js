@@ -44,13 +44,13 @@ function YoutubeSearch() {
                         So Sánh Sức Mạnh Laptop DDR5 Với DDR4, Tại Sao Đây MUX Switch Và DDR5 PHẢI CÓ Trên Laptop Asus 2022
                     </div>
                     <div className="created-at">
-                        Created At: {moment('2022-04-19T04:43:17Z').format('DD-MM-YYYY HH:mm:ss')}
+                        Created At: {moment('2022-04-19T04:43:17Z').format('DD-MM-YYYY HH:mm:ss A')}
                     </div>
                     <div className="author">
-
+                        Author: TNC Channel
                     </div>
                     <div className="description">
-
+                        Mình xin phép chia sẻ theo những gì mình biết và tìm hiểu. Trong quá trình trao đổi rất mong mọi người đóng góp và hoàn thiện ...
                     </div>
 
                 </div>

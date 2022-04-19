@@ -88,9 +88,9 @@
         display   : flex;
         width     : 100%;
         margin-top: 20px;
+        padding   : 0 100px;
 
         .left {
-            border : 1px solid red;
             width  : 40%;
             padding: 0 10px;
 
@@ -101,7 +101,6 @@
         }
 
         .right {
-            border    : 1px solid green;
             width     : 60%;
             text-align: left;
             padding   : 5px;

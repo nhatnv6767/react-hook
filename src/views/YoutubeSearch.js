@@ -2,6 +2,7 @@ import React from 'react'
 import './Blog.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import moment from 'moment'
 
 function YoutubeSearch() {
 
@@ -40,7 +41,7 @@ function YoutubeSearch() {
                 <div className="right">
 
                     <div className="title">
-
+                        So Sánh Sức Mạnh Laptop DDR5 Với DDR4, Tại Sao Đây MUX Switch Và DDR5 PHẢI CÓ Trên Laptop Asus 2022
                     </div>
                     <div className="created-at">
 

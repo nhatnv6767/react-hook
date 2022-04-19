@@ -66,11 +66,11 @@ function YoutubeSearch() {
                 videos.map((item) => {
                     return (
 
-                        <div className="yt-result">
+                        <div className="yt-result" key={item.id}>
                             <div className="left">
                                 <iframe
                                     className="ifram-yt"
-                                    src="https://www.youtube.com/embed/b4e2sTKF0w0"
+                                    src={`https://www.youtube.com/embed/${item.id}`}
                                     title="YouTube video player"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -83,16 +83,16 @@ function YoutubeSearch() {
                             <div className="right">
 
                                 <div className="title">
-                                    So Sánh Sức Mạnh Laptop DDR5 Với DDR4, Tại Sao Đây MUX Switch Và DDR5 PHẢI CÓ Trên Laptop Asus 2022
+                                    {item.title}
                                 </div>
                                 <div className="created-at">
-                                    Created At: {moment('2022-04-19T04:43:17Z').format('DD-MM-YYYY HH:mm:ss A')}
+                                    Created At: {moment(item.createdAt).format('DD-MM-YYYY HH:mm:ss A')}
                                 </div>
                                 <div className="author">
-                                    Author: TNC Channel
+                                    Author: {item.author}
                                 </div>
                                 <div className="description">
-                                    Mình xin phép chia sẻ theo những gì mình biết và tìm hiểu. Trong quá trình trao đổi rất mong mọi người đóng góp và hoàn thiện ...
+                                    {item.description}
                                 </div>
 
                             </div>
@@ -101,9 +101,6 @@ function YoutubeSearch() {
                     )
                 })
             }
-
-
-
         </div>
     )
 }

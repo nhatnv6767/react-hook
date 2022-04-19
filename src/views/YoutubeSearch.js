@@ -14,6 +14,18 @@ function YoutubeSearch() {
         // component vừa mount xong thì sẽ gọi useEffect nếu để dependence là []
     }, [])
 
+    const handleSearchYt = async () => {
+        let res = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+            part: 'snippet',
+            maxResults: 20,
+            key: 'AIzaSyA-HLBPCnh9emmCk7gcFDPpPe8y2PpU61E',
+            type: 'video',
+            q: query
+        })
+
+        console.log('>>>> Check res youtube: ', res)
+    }
+
     return (
         <div className="youtube-search-container">
             <div className="yt-search">
@@ -21,7 +33,9 @@ function YoutubeSearch() {
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
                 />
-                <button type="button">Search</button>
+                <button type="button" onClick={handleSearchYt}>
+                    Search
+                </button>
             </div>
 
             <div className="yt-result">
@@ -30,9 +44,9 @@ function YoutubeSearch() {
                         className="ifram-yt"
                         src="https://www.youtube.com/embed/b4e2sTKF0w0"
                         title="YouTube video player"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                     >
 
                     </iframe>
@@ -62,9 +76,9 @@ function YoutubeSearch() {
                         className="ifram-yt"
                         src="https://www.youtube.com/embed/b4e2sTKF0w0"
                         title="YouTube video player"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                     >
 
                     </iframe>

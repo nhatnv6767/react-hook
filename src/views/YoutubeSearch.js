@@ -30,7 +30,7 @@ function YoutubeSearch() {
 
         console.log('>>>> CHECK RES: ', res)
         if (res && res.data && res.data.items) {
-            let raw = res.items;
+            let raw = res.data.items;
             let result = [];
             if (raw && raw.length > 0) {
                 raw.map(item => {

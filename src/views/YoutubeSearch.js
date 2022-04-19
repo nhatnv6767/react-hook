@@ -26,8 +26,7 @@ function YoutubeSearch() {
             <div className="yt-result">
                 <div className="left">
                     <iframe
-                        width="841"
-                        height="473"
+                        className="ifram-yt"
                         src="https://www.youtube.com/embed/0ZTj2DNtLs0"
                         title="YouTube video player"
                         frameborder="0"

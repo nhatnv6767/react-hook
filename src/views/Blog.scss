@@ -83,4 +83,24 @@
         border          : none;
         background-color: #e2e2e2;
     }
+
+    .yt-result {
+        display: flex;
+        width  : 100%;
+
+        .left {
+            border: 1px solid red;
+            width : 50%;
+
+            .ifram-yt {
+                width : 500px;
+                height: 300px;
+            }
+        }
+
+        .right {
+            border: 1px solid green;
+            width : 50%;
+        }
+    }
 }

@@ -28,6 +28,24 @@ function YoutubeSearch() {
             }
         })
 
+        if (res && res.items) {
+            let raw = res.items;
+            if (raw && raw.length > 0) {
+                let result = [];
+                raw.map(item => {
+                    let object = {};
+                    object.id = item.id.videoId
+                    object.title = item.snippet.title
+                    object.createdAt = item.snippet.publishedAt
+                    object.author = item.snippet.channelTitle
+                    object.description = item.snippet.description
+
+                    result.push(object)
+                })
+            }
+
+
+        }
 
         console.log('>>>> Check res youtube: ', res)
     }

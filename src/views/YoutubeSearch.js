@@ -30,8 +30,8 @@ function YoutubeSearch() {
 
         if (res && res.items) {
             let raw = res.items;
+            let result = [];
             if (raw && raw.length > 0) {
-                let result = [];
                 raw.map(item => {
                     let object = {};
                     object.id = item.id.videoId
@@ -43,7 +43,7 @@ function YoutubeSearch() {
                     result.push(object)
                 })
             }
-
+            setVideos(result)
 
         }
 

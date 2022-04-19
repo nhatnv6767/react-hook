@@ -3,7 +3,10 @@ import React from 'react'
 function YoutubeSearch() {
     return (
         <div className="youtube-search-container">
-            <h1>YoutubeSearch</h1>
+            <div className="yt-search">
+                <input type="text" />
+                <button type="button">Search</button>
+            </div>
         </div>
     )
 }

@@ -29,7 +29,7 @@ function YoutubeSearch() {
         })
 
         console.log('>>>> CHECK RES: ', res)
-        if (res && res.items) {
+        if (res && res.data && res.data.items) {
             let raw = res.items;
             let result = [];
             if (raw && raw.length > 0) {

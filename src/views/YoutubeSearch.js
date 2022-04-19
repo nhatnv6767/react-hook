@@ -28,6 +28,7 @@ function YoutubeSearch() {
             }
         })
 
+        console.log('>>>> CHECK RES: ', res)
         if (res && res.items) {
             let raw = res.items;
             let result = [];
@@ -43,11 +44,13 @@ function YoutubeSearch() {
                     result.push(object)
                 })
             }
+            console.log('>>>> Check result: ', result)
+
             setVideos(result)
 
         }
 
-        console.log('>>>> Check res youtube: ', res)
+
     }
 
     return (

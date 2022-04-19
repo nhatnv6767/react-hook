@@ -15,13 +15,19 @@ function YoutubeSearch() {
     }, [])
 
     const handleSearchYt = async () => {
-        let res = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-            part: 'snippet',
-            maxResults: 20,
-            key: 'AIzaSyA-HLBPCnh9emmCk7gcFDPpPe8y2PpU61E',
-            type: 'video',
-            q: query
+
+        let res = await axios({
+            "method": "GET",
+            "url": "https://www.googleapis.com/youtube/v3/search",
+            "params": {
+                'part': 'snippet',
+                'maxResults': '20',
+                'key': 'AIzaSyA-HLBPCnh9emmCk7gcFDPpPe8y2PpU61E',
+                'type': 'video',
+                'q': query
+            }
         })
+
 
         console.log('>>>> Check res youtube: ', res)
     }
